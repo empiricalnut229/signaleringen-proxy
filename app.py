@@ -1,10 +1,13 @@
 
-from flask import Flask, jsonify, Response
-from flask_cors import CORS
+from flask import Flask, jsonify, Response, request
 import requests
 
 app = Flask(__name__)
-CORS(app, origins="*", send_wildcard=True)  # ← dit is essentieel
+
+@app.after_request
+def add_cors_headers(response):
+    response.headers["Access-Control-Allow-Origin"] = "*"
+    return response
 
 @app.route("/signaleringen")
 def signaleringen():
