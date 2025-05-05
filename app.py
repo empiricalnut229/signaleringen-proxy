@@ -4,10 +4,7 @@ from flask_cors import CORS
 import requests
 
 app = Flask(__name__)
-CORS(app, origins=["https://handhavingsrecht.nl"])
-
-
-app = Flask(__name__)
+CORS(app, origins="*", send_wildcard=True)  # ← dit is essentieel
 
 @app.route("/signaleringen")
 def signaleringen():
@@ -20,4 +17,5 @@ def signaleringen():
         return jsonify({"error": str(e)}), 500
 
 if __name__ == "__main__":
-    app.run(host="localhost", port=3000)
+    app.run()
+
