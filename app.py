@@ -1,6 +1,11 @@
 
 from flask import Flask, jsonify, Response
+from flask_cors import CORS
 import requests
+
+app = Flask(__name__)
+CORS(app)  # ← Dit laat CORS toe vanaf alle origins
+
 
 app = Flask(__name__)
 
