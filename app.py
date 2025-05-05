@@ -4,7 +4,7 @@ from flask_cors import CORS
 import requests
 
 app = Flask(__name__)
-CORS(app, origins=["https://emailoctopus.com"])
+CORS(app, origins=["https://handhavingsrecht.nl"])
 
 
 app = Flask(__name__)
