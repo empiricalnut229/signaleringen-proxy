@@ -4,7 +4,7 @@ from flask_cors import CORS
 import requests
 
 app = Flask(__name__)
-CORS(app)  # ← Dit laat CORS toe vanaf alle origins
+CORS(app, origins=["https://emailoctopus.com"])
 
 
 app = Flask(__name__)
